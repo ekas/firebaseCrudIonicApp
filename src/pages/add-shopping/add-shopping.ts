@@ -20,7 +20,23 @@ export class AddShoppingPage {
   }
 
   addShoppingItem(shoppingItem: ShoppingItem){
-    console.log(shoppingItem);
+    /*
+      create an anonymous object and convert itemNumber to a Number 
+      Push this to the database under 'shopping-list' node
+    */ 
+    this.shoppingItemRefs$.push({
+      itemName: this.shoppingItem.itemName,
+      itemNumber:Number(this.shoppingItem.itemNumber)
+    });
+
+    //Reset our Shopping Item
+    this.shoppingItem = {} as ShoppingItem;
+
+    /*
+      ['shoppingListPage','AddShoppingPage'] 
+     */
+    //Navigate user back to the shopping list
+    this.navCtrl.pop();
   }
 
 }

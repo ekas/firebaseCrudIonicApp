@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
+import { FIREBASE_CREDENTIALS } from './firebase.credentials'
 
 import { MyApp } from './app.component';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
@@ -20,6 +21,7 @@ import { AddShoppingPage } from '../pages/add-shopping/add-shopping';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
     AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
