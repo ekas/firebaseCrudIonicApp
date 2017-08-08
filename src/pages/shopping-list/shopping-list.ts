@@ -5,6 +5,7 @@ import { FirebaseListObservable , AngularFireDatabase} from 'angularfire2/databa
 
 import { AddShoppingPage } from '../add-shopping/add-shopping';
 import { ShoppingItem } from '../../models/shopping-item/shopping-item.interface';
+import { EditShoppingItemPage } from '../edit-shopping-item/edit-shopping-item';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class ShoppingListPage {
           text:'Edit',
           handler : () =>{
             //send the user to EditShoppingItemPage and pass the key as a parameter
+            this.navCtrl.push(EditShoppingItemPage,{ shoppingItemId: shoppingItem.$key });
           }
         },
         {
